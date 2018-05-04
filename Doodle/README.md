@@ -5,12 +5,12 @@ Diese Umfragen benötigen einen Account mit einem Namen (Muss nicht einzigartig 
 ..* Kalender Ansicht für alle Umfragen
 ..* Mögliche Antworten (Ja, Nein und optional einstelbar "Wenn´s sein muss")
 ..* Umfrage schließen mit ersichtlichen Endergebniss
-<br>
+
 ## Kostenpflichtige funktionen
 ..* Personalisiertes Branding (Logo ändern)
 ..* Kontaktdaten von teilnehmern der Umfrage verlangen um teilzunehmen
 ..* Keine Werbung
-<br>
+
 ## Bedienung
 ### Umfragensteller
 1. https://doodle.com/de/ aufrufen
@@ -21,7 +21,7 @@ Diese Umfragen benötigen einen Account mit einem Namen (Muss nicht einzigartig 
 6. Falls Datum(en) gewählt dann ist optional eine Uhrzeit einzugeben (verschiedene Uhrzeiten möglich für einzelne Daten)
 7. Nickname und E-mail eingabe (öffentlich einsehbar)
 8. Link oder E-Mail verschicken
-<br>
+
 ### Umfrageteilnehmer
 1. Link öffnen
 2. Bevorzugtes Datum wählen und mit Namen abstimmen
