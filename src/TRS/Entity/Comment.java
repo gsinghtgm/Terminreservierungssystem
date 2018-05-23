@@ -3,17 +3,33 @@ package TRS.Entity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "comment")
 public class Comment {
+	@Id
+	@Column(name = "comment_id")
 	private int id;
 
+	@ManyToOne
+	@JoinColumn(name = "creator")
 	private User creator;
 
+	@ManyToOne
+	@JoinColumn(name = "event")
 	private Event eventID;
 
+	@Column(name = "message")
 	private String message;
 	
 	//sample date:2018-05-21 17:48:00
+	@Column(name = "date")
 	private String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
 	public int getId() {
