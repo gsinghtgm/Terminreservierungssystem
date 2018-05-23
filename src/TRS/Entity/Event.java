@@ -2,20 +2,41 @@ package TRS.Entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "event")
 public class Event {
 
+	@Id
+	@Column(name = "event_id")
 	private int id;
 	
+	@ManyToOne
+	@JoinColumn(name = "creator")
 	private User creator;
 
+	@Column(name = "name")
 	private String name;
 
+	@Column(name = "location")
 	private String location;
 
+	@Column(name = "note")
 	private String note;
 
+	@OneToMany(targetEntity = Comment.class, mappedBy = "eventID", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Comment> comments;
 	
+	@OneToMany(targetEntity = Participant.class, mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Participant> participating;
 	
 	public int getId() {
