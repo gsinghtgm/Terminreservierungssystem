@@ -1,5 +1,7 @@
 package TRS;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -13,39 +15,39 @@ import TRS.Entity.*;
  */
 public class CreateUser {
 
-	public CreateUser(String firstname, String lastname, String email, String password) {
+	public boolean createUser(String firstname, String lastname, String email, String password, Session session) {
 
-		// create session factory
-		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(User.class)
-				.buildSessionFactory();
-
-		// create session
-		Session session = factory.getCurrentSession();
-
-		try {
+		// start a transaction
+		session.beginTransaction();
+		Query checkUser = session.createQuery("from User where email=:email");
+		checkUser.setParameter("email", email);
+		if (checkUser.getResultList().isEmpty()) {
 			// create a user object
 			User tempUser = new User();
 			tempUser.setFirstname(firstname);
 			tempUser.setLastname(lastname);
 			tempUser.setEmail(email);
 			tempUser.setPassword(password);
-			// start a transaction
-			session.beginTransaction();
-
 			// save the user object
 			session.save(tempUser);
-
-			// commit transaction
-			session.getTransaction().commit();
-
-		} finally {
-			factory.close();
+		} else {
+			System.err.println("User existiert schon!");
+			return false;
 		}
+		// commit transaction
+		session.getTransaction().commit();
+
+		return true;
 
 	}
 
 	public static void main(String[] args) {
-		new CreateUser("2", "3", "5", "4");
+		CreateUser x = new CreateUser();
+		FactoryBuilder fb = new FactoryBuilder();
+		boolean is = x.createUser("2", "3", "54555", "4", fb.session);
+		if (is)
+			System.out.println("GG");
+		fb.factory.close();
 	}
 
 }
