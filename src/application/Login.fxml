@@ -7,9 +7,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #add8e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
    <children>
-      <HBox layoutX="340.0" layoutY="180.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="180.0">
+      <HBox layoutX="340.0" layoutY="180.0" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="180.0">
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="39.0">
                <children>
@@ -45,7 +45,6 @@
             <Insets left="20.0" top="80.0" />
          </padding>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="300.0" layoutX="435.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="180.0" />
       <Button layoutX="535.0" layoutY="505.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="51.0" prefWidth="189.0" text="LOGIN" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="556.0" AnchorPane.topAnchor="505.0" />
       <Hyperlink fx:id="registerHL" layoutX="340.0" layoutY="586.0" onAction="#handleRegistrierenHL" prefHeight="23.0" prefWidth="600.0" text="Noch kein Konto? Hier registrieren!" textAlignment="CENTER" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="586.0">
          <opaqueInsets>
