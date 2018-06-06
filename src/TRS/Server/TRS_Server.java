@@ -22,11 +22,12 @@ public class TRS_Server {
 	private TRS.FactoryBuilder fb = new TRS.FactoryBuilder();
 	private Session session = fb.session;
 
-	/*
-	 * public TRS_Server(int port, Map<String, Integer> usermap) { this.port = port;
-	 * al = new ArrayList<ClientThread>(); this.usermap = new HashMap<String,
-	 * Integer>(); }
-	 */
+	public TRS_Server(int port, Map<String, Integer> usermap) {
+		this.port = port;
+		al = new ArrayList<ClientThread>();
+		this.usermap = new HashMap<String, Integer>();
+	}
+
 	public boolean loginUser(String email, String password) {
 		return new TRS.LoginUser().loginUser(email, password, this.session);
 	}
@@ -45,6 +46,7 @@ public class TRS_Server {
 			ServerSocket serverSocket = new ServerSocket(port);
 			while (keepGoing) {
 				// wartet auf einen client
+				System.out.println("Warte auf client");
 				Socket socket = serverSocket.accept();
 				if (!keepGoing)
 					break;
@@ -66,13 +68,13 @@ public class TRS_Server {
 		}
 
 	}
-
+/*
 	public static void main(String args[]) {
 		TRS_Server srv = new TRS_Server();
 		if (srv.loginUser("gsingh@student.tgm.ac.at", "gsingh123"))
 			System.out.println("GG");
 		srv.close();
-	}
+	}*/
 
 	public class ClientThread extends Thread {
 		Socket socket;
