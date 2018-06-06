@@ -1,5 +1,6 @@
 package TRS.Server;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
@@ -81,9 +82,9 @@ public class TRS_Server {
 	public class ClientThread extends Thread {
 		Socket socket;
 		int id;
-		String cm;// ChatMessage
+		String cm;// clientmessage
 		OutputStreamWriter sOutput;
-		InputStreamReader sInput;
+		BufferedReader sInput;
 		String username;
 
 		public ClientThread(Socket socket) {
@@ -91,13 +92,31 @@ public class TRS_Server {
 			this.socket = socket;
 			try {
 				sOutput = new OutputStreamWriter(socket.getOutputStream(),"UTF-8");
-				sInput = new InputStreamReader(socket.getInputStream(),"UTF-8");
+				sInput = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		public void run() {
+			/*Kommunikation mit client*/
+			boolean keepGoing = true;
+			while (keepGoing) {
+				try {
 
+					cm = sInput.readLine();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					break;
+				}
+				// sendet an alle anderen
+				
+			}
+			// remove client id
+			
+			close();
+		}
 		private void close() {
 			// TODO Auto-generated method stub
 
