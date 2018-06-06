@@ -7,10 +7,10 @@ import java.io.*;
 import java.util.*;
 
 public class TRS_Client {
-	private ObjectInputStream sInput; // lesen vom socket
-	private ObjectOutputStream sOutput; // schreiben auf socket
+	private OutputStreamWriter sInput; // lesen vom socket
+	private InputStreamReader sOutput; // schreiben auf socket
 	private Socket socket;
-	//private Ui_ChatClient cg; // gui
+	private Ui_ChatClient cg; // gui
 	private String host; // server ip
 	private int port; // server port
 
@@ -35,8 +35,8 @@ public class TRS_Client {
 	public boolean start() {
 		try {// server verbindung aufbauen trial
 			socket = new Socket(host, port);
-			sInput = new ObjectInputStream(socket.getInputStream());
-			sOutput = new ObjectOutputStream(socket.getOutputStream());
+			sInput =  new OutputStreamWriter(socket.getOutputStream(),"UTF-8");
+			sOutput = new InputStreamReader(socket.getInputStream(),"UTF-8");
 		} catch (Exception ec) {
 			System.err.println(ec);
 			return false;
@@ -53,7 +53,7 @@ public class TRS_Client {
 	 */
 	public void sendMessage(String msg) {
 		try {
-			sOutput.writeObject(msg);
+			//sOutput.writeObject(msg);
 		} catch (IOException e) {
 			System.err.println(e);
 		}
@@ -93,7 +93,7 @@ public class TRS_Client {
 		public void run() {
 			while (true) {
 				try {
-					String msg = (String) sInput.readObject();
+					//String msg = (String) sInput.readObject();
 					// cg.messages.addItem(msg);
 				} catch (IOException e) {
 					break;

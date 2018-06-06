@@ -1,8 +1,10 @@
 package TRS.Server;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -80,16 +82,16 @@ public class TRS_Server {
 		Socket socket;
 		int id;
 		String cm;// ChatMessage
-		ObjectOutputStream sOutput;
-		ObjectInputStream sInput;
+		OutputStreamWriter sOutput;
+		InputStreamReader sInput;
 		String username;
 
 		public ClientThread(Socket socket) {
 			id = ++connectionid;// ++ Berechnung vorher
 			this.socket = socket;
 			try {
-				sOutput = new ObjectOutputStream(socket.getOutputStream());
-				sInput = new ObjectInputStream(socket.getInputStream());
+				sOutput = new OutputStreamWriter(socket.getOutputStream(),"UTF-8");
+				sInput = new InputStreamReader(socket.getInputStream(),"UTF-8");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
