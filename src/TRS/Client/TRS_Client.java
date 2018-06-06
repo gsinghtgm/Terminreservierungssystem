@@ -6,11 +6,14 @@ import java.io.*;
 
 import java.util.*;
 
+import javax.json.Json;
+import javax.json.JsonObject;
+
 public class TRS_Client {
-	private OutputStreamWriter sInput; // lesen vom socket
-	private InputStreamReader sOutput; // schreiben auf socket
+	private OutputStreamWriter sOutput; // lesen vom socket
+	private BufferedReader sInput; // schreiben auf socket
 	private Socket socket;
-	private Ui_ChatClient cg; // gui
+	private TRS.GUI.ClientGUI cg; // gui
 	private String host; // server ip
 	private int port; // server port
 
@@ -21,10 +24,10 @@ public class TRS_Client {
 	 * @param port
 	 * @param cg
 	 */
-	public TRS_Client(String host, int port/*, Ui_ChatClient cg*/) {
+	public TRS_Client(String host, int port/* , Ui_ChatClient cg */) {
 		this.host = host;
 		this.port = port;
-		//this.cg = cg;
+		// this.cg = cg;
 	}
 
 	/**
@@ -35,8 +38,8 @@ public class TRS_Client {
 	public boolean start() {
 		try {// server verbindung aufbauen trial
 			socket = new Socket(host, port);
-			sInput =  new OutputStreamWriter(socket.getOutputStream(),"UTF-8");
-			sOutput = new InputStreamReader(socket.getInputStream(),"UTF-8");
+			sOutput = new OutputStreamWriter(socket.getOutputStream(), "UTF-8");
+			sInput = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 		} catch (Exception ec) {
 			System.err.println(ec);
 			return false;
@@ -47,13 +50,14 @@ public class TRS_Client {
 	}
 
 	/**
-	 * Versendet die Nachricht.
+	 * Versendet den Login.
 	 * 
 	 * @param msg
 	 */
-	public void sendMessage(String msg) {
+	public void login(String username, String password) {
+		JsonObject json = Json.createObjectBuilder().add("username", username).add("password", password).build();
 		try {
-			//sOutput.writeObject(msg);
+			sOutput.write(json.toString() + "\n");
 		} catch (IOException e) {
 			System.err.println(e);
 		}
@@ -93,12 +97,10 @@ public class TRS_Client {
 		public void run() {
 			while (true) {
 				try {
-					//String msg = (String) sInput.readObject();
+					String msg = sInput.readLine();
 					// cg.messages.addItem(msg);
 				} catch (IOException e) {
 					break;
-
-				} catch (ClassNotFoundException e2) {
 
 				}
 
