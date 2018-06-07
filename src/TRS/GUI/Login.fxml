@@ -37,8 +37,13 @@
             </VBox>
             <VBox prefHeight="138.0" prefWidth="312.0" spacing="40.0">
                <children>
+<<<<<<< HEAD
                   <TextField id="username_Login" fx:id="lUsernameTF" promptText="Username" />
                   <PasswordField id="password_Login" fx:id="lPasswortTF" promptText="********" />
+=======
+                  <TextField id="lUsernameTF" />
+                  <PasswordField id="lPasswortTF" />
+>>>>>>> 4b2aa2030e83983ca376ce0d49375a58860b8389
                </children>
                <padding>
                   <Insets top="25.0" />
