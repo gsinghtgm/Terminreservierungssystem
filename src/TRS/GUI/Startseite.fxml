@@ -15,17 +15,17 @@
          </font>
       </Text>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="781.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
-      <MenuButton layoutX="925.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
+      <MenuButton fx:id="sMenuB" layoutX="925.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
-          <MenuItem mnemonicParsing="false" onAction="#handleKontoeinstellungen" text="Kontoeinstellungen" />
-            <MenuItem mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
+          <MenuItem fx:id="sEventsI" mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
+          <MenuItem fx:id="sKontoI" mnemonicParsing="false" onAction="#handleKontoeinstellungen" text="Kontoeinstellungen" />
+            <MenuItem fx:id="sAbmeldenI" mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
         </items>
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </MenuButton>
-      <Button layoutX="1072.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleEventErstellen" prefHeight="40.0" text="Event erstellen">
+      <Button fx:id="sEvent1B" layoutX="1072.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleEventErstellen" prefHeight="40.0" text="Event erstellen">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -45,7 +45,7 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="315.0" layoutY="330.0" prefHeight="60.0" prefWidth="473.0" text="Was ist der Anlass?" />
-      <Button layoutX="798.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleEventErstellen" prefHeight="60.0" prefWidth="119.0" text="Event erstellen" />
+      <TextField fx:id="sAnlassTF" layoutX="315.0" layoutY="330.0" prefHeight="60.0" prefWidth="473.0" text="Was ist der Anlass?" />
+      <Button fx:id="sEvent2B" layoutX="798.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleEventErstellen" prefHeight="60.0" prefWidth="119.0" text="Event erstellen" />
    </children>
 </AnchorPane>

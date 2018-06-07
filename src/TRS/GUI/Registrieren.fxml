@@ -46,10 +46,10 @@
             </VBox>
             <VBox prefHeight="340.0" prefWidth="453.0" spacing="42.0">
                <children>
-                  <TextField id="nname" />
-                  <TextField id="vname" />
-                  <TextField id="email" />
-                  <PasswordField id="passwort" />
+                  <TextField id="nname" fx:id="rNachnameTF" />
+                  <TextField id="vname" fx:id="rVornameTF" />
+                  <TextField id="email" fx:id="rMailTF" />
+                  <PasswordField id="passwort" fx:id="rPasswortTF" />
                </children>
                <padding>
                   <Insets top="46.0" />
@@ -57,6 +57,6 @@
             </VBox>
          </children>
       </HBox>
-      <Button layoutX="531.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleRegistrieren" prefHeight="46.0" prefWidth="218.0" text="Registrieren" />
+      <Button fx:id="rRegistrierenB" layoutX="531.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleRegistrieren" prefHeight="46.0" prefWidth="218.0" text="Registrieren" />
    </children>
 </AnchorPane>

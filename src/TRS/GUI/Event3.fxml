@@ -14,11 +14,11 @@
             <Font name="Carlito Bold" size="40.0" />
          </font>
       </Text>
-      <MenuButton layoutX="1086.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
+      <MenuButton fx:id="e3MenuB" layoutX="1086.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
-          <MenuItem mnemonicParsing="false" text="Kontoeinstellungen" />
-            <MenuItem mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
+          <MenuItem fx:id="e3EventsI" mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
+          <MenuItem fx:id="e3KontoI" mnemonicParsing="false" text="Kontoeinstellungen" />
+            <MenuItem fx:id="e3AbmeldenI" mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
         </items>
          <font>
             <Font name="System Bold" size="12.0" />
@@ -30,7 +30,7 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="300.0" layoutX="340.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="210.0" />
-      <Button layoutX="830.0" layoutY="525.0" mnemonicParsing="false" onAction="#handleEvent3" prefHeight="50.0" prefWidth="110.0" text="Senden&amp;Erstellen" />
-      <TextArea layoutX="391.0" layoutY="249.0" prefHeight="200.0" prefWidth="513.0" text="E-Mails" />
+      <Button fx:id="e3SendenB" layoutX="830.0" layoutY="525.0" mnemonicParsing="false" onAction="#handleEvent3" prefHeight="50.0" prefWidth="110.0" text="Senden&amp;Erstellen" />
+      <TextArea fx:id="e3MailTA" layoutX="391.0" layoutY="249.0" prefHeight="200.0" prefWidth="513.0" text="E-Mails" />
    </children>
 </AnchorPane>

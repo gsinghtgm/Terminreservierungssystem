@@ -14,11 +14,11 @@
             <Font name="Carlito Bold" size="40.0" />
          </font>
       </Text>
-      <MenuButton layoutX="1086.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
+      <MenuButton fx:id="e2MenuB" layoutX="1086.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Max Mustermann">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
-          <MenuItem mnemonicParsing="false" text="Kontoeinstellungen" />
-            <MenuItem mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
+          <MenuItem fx:id="e2EventsI" mnemonicParsing="false" onAction="#handleDeineEvents" text="Deine Events" />
+          <MenuItem fx:id="e2KontoI" mnemonicParsing="false" text="Kontoeinstellungen" />
+            <MenuItem fx:id="e2AbmeldenI" mnemonicParsing="false" onAction="#handleAbmeldung" text="Abmelden" />
         </items>
          <font>
             <Font name="System Bold" size="12.0" />
@@ -30,9 +30,9 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="300.0" layoutX="340.0" layoutY="210.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="210.0" />
-      <Button layoutX="720.0" layoutY="349.0" mnemonicParsing="false" text="Uhrzeit eintragen" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="372.0" layoutY="261.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
+      <Button fx:id="e2UhrB" layoutX="720.0" layoutY="349.0" mnemonicParsing="false" text="Uhrzeit eintragen" />
+      <Rectangle fx:id="e2Kalender" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="372.0" layoutY="261.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
       <Text layoutX="372.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="v Placeholder für Kalender" />
-      <Button layoutX="830.0" layoutY="525.0" mnemonicParsing="false" onAction="#handleEvent2" prefHeight="50.0" prefWidth="110.0" text="Fortfahren" />
+      <Button fx:id="e2FortfahrenB" layoutX="830.0" layoutY="525.0" mnemonicParsing="false" onAction="#handleEvent2" prefHeight="50.0" prefWidth="110.0" text="Fortfahren" />
    </children>
 </AnchorPane>
