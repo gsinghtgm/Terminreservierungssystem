@@ -12,6 +12,12 @@ import java.awt.TextField;
 import java.io.IOException;
 
 public class ClientGUIController {
+	@FXML private TextField nname;
+	@FXML private TextField vname;
+	@FXML private TextField email;
+	@FXML private TextField password;
+	@FXML private TextField username_Login;
+	@FXML private TextField password_Login;
 
 	public ClientGUI cg;
 	public TRS.Client.TRS_Client client;

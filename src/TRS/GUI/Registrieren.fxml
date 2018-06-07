@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #add8e6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TRS.GUI.ClientGUIController">   <children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #add8e6;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TRS.GUI.ClientGUIController">   <children>
       <Text layoutX="30.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terminreservierungssystem">
          <font>
             <Font name="Carlito Bold" size="40.0" />
@@ -46,10 +49,10 @@
             </VBox>
             <VBox prefHeight="340.0" prefWidth="453.0" spacing="42.0">
                <children>
-                  <TextField id="nname" fx:id="rNachnameTF" />
-                  <TextField id="vname" fx:id="rVornameTF" />
-                  <TextField id="email" fx:id="rMailTF" />
-                  <PasswordField id="passwort" fx:id="rPasswortTF" />
+                  <TextField id="nname" fx:id="rNachnameTF" promptText="Nachname" />
+                  <TextField id="vname" fx:id="rVornameTF" promptText="Vorname" />
+                  <TextField id="email" fx:id="rMailTF" promptText="Email" />
+                  <PasswordField id="passwort" fx:id="rPasswortTF" promptText="*******" />
                </children>
                <padding>
                   <Insets top="46.0" />
