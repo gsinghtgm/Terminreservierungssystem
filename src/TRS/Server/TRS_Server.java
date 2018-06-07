@@ -71,13 +71,11 @@ public class TRS_Server {
 		}
 
 	}
-/*
-	public static void main(String args[]) {
-		TRS_Server srv = new TRS_Server();
-		if (srv.loginUser("gsingh@student.tgm.ac.at", "gsingh123"))
-			System.out.println("GG");
-		srv.close();
-	}*/
+	/*
+	 * public static void main(String args[]) { TRS_Server srv = new TRS_Server();
+	 * if (srv.loginUser("gsingh@student.tgm.ac.at", "gsingh123"))
+	 * System.out.println("GG"); srv.close(); }
+	 */
 
 	public class ClientThread extends Thread {
 		Socket socket;
@@ -91,32 +89,37 @@ public class TRS_Server {
 			id = ++connectionid;// ++ Berechnung vorher
 			this.socket = socket;
 			try {
-				sOutput = new OutputStreamWriter(socket.getOutputStream(),"UTF-8");
+				sOutput = new OutputStreamWriter(socket.getOutputStream(), "UTF-8");
 				sInput = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+
 		public void run() {
-			/*Kommunikation mit client*/
+			/* Kommunikation mit client */
 			boolean keepGoing = true;
 			while (keepGoing) {
 				try {
-
 					cm = sInput.readLine();
+					if (loginUser("gsingh@student.tgm.ac.at", "gsingh123")) {
+						sOutput.write("erfolgreich");
+						sOutput.flush();
+					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 					break;
 				}
 				// sendet an alle anderen
-				
+				System.out.println("Hier sollte lesung enden");
 			}
 			// remove client id
-			
+
 			close();
 		}
+
 		private void close() {
 			// TODO Auto-generated method stub
 

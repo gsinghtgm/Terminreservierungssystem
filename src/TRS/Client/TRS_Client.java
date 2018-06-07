@@ -16,6 +16,7 @@ public class TRS_Client {
 	private TRS.GUI.ClientGUI cg; // gui
 	private String host; // server ip
 	private int port; // server port
+	boolean autheticated = false;
 
 	/**
 	 * Konstruktor
@@ -58,6 +59,7 @@ public class TRS_Client {
 		JsonObject json = Json.createObjectBuilder().add("username", username).add("password", password).build();
 		try {
 			sOutput.write(json.toString() + "\n");
+			sOutput.flush();
 		} catch (IOException e) {
 			System.err.println(e);
 		}
@@ -98,7 +100,10 @@ public class TRS_Client {
 			while (true) {
 				try {
 					String msg = sInput.readLine();
-					// cg.messages.addItem(msg);
+					System.out.println(msg);
+					System.out.println("ich mach lesung");
+					if(msg.equals("erfolgreich"))
+						setAutheticated(true);
 				} catch (IOException e) {
 					break;
 
@@ -108,5 +113,14 @@ public class TRS_Client {
 
 		}
 
+	}
+
+
+	public boolean isAutheticated() {
+		return autheticated;
+	}
+
+	public void setAutheticated(boolean autheticated) {
+		this.autheticated = autheticated;
 	}
 }

@@ -10,15 +10,26 @@ import javafx.stage.Stage;
 
 import java.awt.TextField;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import TRS.Client.TRS_Client;
 
 public class ClientGUIController {
 
 	public ClientGUI cg;
-	public TRS.Client.TRS_Client client;
+	public TRS_Client client;
 
 	public void setMain(ClientGUI cg) {
 		this.cg = cg;
 	}
+
+	public void setMain(ClientGUI cg, TRS_Client client) {
+		this.cg = cg;
+		this.client = client;
+	}
+
+	@FXML
+	private TextField lUsernameTF;
 
 	@FXML
 	public void handleRegistrierenHL(ActionEvent event) {
@@ -48,18 +59,21 @@ public class ClientGUIController {
 		}
 	}
 
-
 	@FXML
-	public void handleLogin(ActionEvent event) {
-		try {
-			Node node = (Node) event.getSource();
-			Stage stage = (Stage) node.getScene().getWindow();
-			Parent root = FXMLLoader.load(getClass().getResource("Startseite.fxml"));
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+	public void handleLogin(ActionEvent event) throws InterruptedException {
+		client.login("testuser","1234");
+		// System.out.println(lUsernameTF.getText());
+		if (client.isAutheticated()) {
+			try {
+				Node node = (Node) event.getSource();
+				Stage stage = (Stage) node.getScene().getWindow();
+				Parent root = FXMLLoader.load(getClass().getResource("Startseite.fxml"));
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
