@@ -102,8 +102,10 @@ public class TRS_Server {
 			boolean keepGoing = true;
 			while (keepGoing) {
 				try {
+					// TODO Fix Transaction
 					cm = sInput.readLine();
 					if (loginUser("gsingh@student.tgm.ac.at", "gsingh123")) {
+						System.out.println("erfolgreich eingeloggt client 1");
 						sOutput.write("erfolgreich");
 						sOutput.flush();
 					}

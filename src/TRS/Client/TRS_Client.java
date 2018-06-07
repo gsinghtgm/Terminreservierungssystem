@@ -97,24 +97,24 @@ public class TRS_Client {
 	 */
 	class Listener extends Thread {
 		public void run() {
-			while (true) {
-				try {
-					String msg = sInput.readLine();
-					System.out.println(msg);
+			try {
+				String msg = sInput.readLine();
+				while (msg != null) {
 					System.out.println("ich mach lesung");
-					if(msg.equals("erfolgreich"))
+					msg = sInput.readLine();
+					System.out.println(msg);
+					if (msg.equals("erfolgreich"))
 						setAutheticated(true);
-				} catch (IOException e) {
-					break;
-
 				}
-
+				System.out.println("schleife ende");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
 		}
 
 	}
-
 
 	public boolean isAutheticated() {
 		return autheticated;

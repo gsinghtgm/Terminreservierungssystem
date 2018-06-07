@@ -54,6 +54,7 @@ public class ClientGUIController {
 	@FXML
 	public void handleRegistrieren(ActionEvent event) {
 		try {
+			System.out.println(vname.getText());
 			Node node = (Node) event.getSource();
 			Stage stage = (Stage) node.getScene().getWindow();
 			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
@@ -67,10 +68,11 @@ public class ClientGUIController {
 
 	@FXML
 	public void handleLogin(ActionEvent event) throws InterruptedException {
-		//client.login("testuser","1234");
-
 		System.out.print(username_Login.getText());
 		/*if (client.isAutheticated()) {
+		client.login("testuser","1234");
+		System.out.println(username_Login.getText());
+		if (client.isAutheticated()) {
 			try {
 				Node node = (Node) event.getSource();
 				Stage stage = (Stage) node.getScene().getWindow();
