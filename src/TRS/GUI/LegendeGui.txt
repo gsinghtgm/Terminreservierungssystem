@@ -1,0 +1,62 @@
+Legende:
+
+		Login.fxml
+Username:			lUsernameTF
+Password:			lPasswortTF
+Login:				lLoginB
+kein Konto 			registerHL
+
+		Registrieren.fxml
+Nachnamefeld:		rNachnameTF
+Vornamefeld:		rVornameTF
+Emailfeld:			rMailTF
+Passwortfeld:		rPasswortTF
+Registrierenbutton: rRegistrierenB
+
+		Startseite.fxml
+Anlassfeld: 		sAnlassTF
+MenuButton:			sMenuB	  //Max Mustermann
+Menuitem:			sEventsI  //Deine Events
+Menuitem:			sKontoI	  // Kontoeinstellungen
+Menuitem:			sAbmeldenI // Abmelden
+Eventfeld(Max)		sEvent1B  //button neben MenuButton
+Eventfeld(Anlass):	sEvent2B  //button neben Anlassfeld
+
+		FEvent.fxml
+MenuButton:			fMenuB	  //Max Mustermann
+Menuitem:			fEventsI  //Deine Events
+Menuitem:			fKontoI	  // Kontoeinstellungen
+Menuitem:			fAbmeldenI // Abmelden
+Table:				fTableView
+Eventfeld(Max)		fEvent1B  //button neben MenuButton
+Einladen			fEinladenB
+Eventname(kein Tf) 	fEventT   //Name des Events
+Scrollpane			fScrollPane // Area für Kommentare
+
+		Event1.fxml
+MenuButton:			e1MenuB	  //Max Mustermann
+Menuitem:			e1EventsI  //Deine Events
+Menuitem:			e1KontoI	  // Kontoeinstellungen
+Menuitem:			e1AbmeldenI // Abmelden
+Fortfahren:			e1FortfahrenB //Fortfahrenbutton
+Titel:				e1TitelTF
+Ort:				e1OrtTF
+Notiz				e1NotizTF
+
+		Event2.fxml
+MenuButton:			e2MenuB	  //Max Mustermann
+Menuitem:			e2EventsI  //Deine Events
+Menuitem:			e2KontoI	  // Kontoeinstellungen
+Menuitem:			e2AbmeldenI // Abmelden
+Kalender: 			e2Kalender	// Kalender Rechteck (muss bearbeitet werden)
+Uhrzeit eintragen	e2UhrB		//Uhrzeit Button
+Fortfahren			e2FortfahrenB //Fortfahrenbutton
+
+		Event3.fxml
+MenuButton:			e3MenuB	  //Max Mustermann
+Menuitem:			e3EventsI  //Deine Events
+Menuitem:			e3KontoI	  // Kontoeinstellungen
+Menuitem:			e3AbmeldenI // Abmelden
+Senden&Erstellen	e3SendenB
+Emails:				e3MailTA // Mail Textarea
+
