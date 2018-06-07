@@ -45,7 +45,7 @@
             <Insets left="20.0" top="80.0" />
          </padding>
       </HBox>
-      <Button  layoutX="535.0" layoutY="505.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="51.0" prefWidth="189.0" text="LOGIN" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="556.0" AnchorPane.topAnchor="505.0" />
+      <Button layoutX="535.0" layoutY="505.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="51.0" prefWidth="189.0" text="LOGIN" AnchorPane.leftAnchor="556.0" AnchorPane.rightAnchor="556.0" AnchorPane.topAnchor="505.0" />
       <Hyperlink fx:id="registerHL" layoutX="340.0" layoutY="586.0" onAction="#handleRegistrierenHL" prefHeight="23.0" prefWidth="600.0" text="Noch kein Konto? Hier registrieren!" textAlignment="CENTER" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="586.0">
          <opaqueInsets>
             <Insets />
