@@ -49,10 +49,10 @@
             </VBox>
             <VBox prefHeight="340.0" prefWidth="453.0" spacing="42.0">
                <children>
-                  <TextField id="nname" fx:id="rNachnameTF" promptText="Nachname" />
-                  <TextField id="vname" fx:id="rVornameTF" promptText="Vorname" />
-                  <TextField id="email" fx:id="rMailTF" promptText="Email" />
-                  <PasswordField id="passwort" fx:id="rPasswortTF" promptText="*******" />
+                  <TextField fx:id="nname" fx:id="rNachnameTF" promptText="Nachname" />
+                  <TextField fx:id="vname" fx:id="rVornameTF" promptText="Vorname" />
+                  <TextField fx:id="email" fx:id="rMailTF" promptText="Email" />
+                  <PasswordField fx:id="passwort" fx:id="rPasswortTF" promptText="*******" />
                </children>
                <padding>
                   <Insets top="46.0" />

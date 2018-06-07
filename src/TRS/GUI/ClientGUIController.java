@@ -7,20 +7,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.*;
 
-import java.awt.TextField;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import TRS.Client.TRS_Client;
 
 public class ClientGUIController {
-	@FXML private TextField nname;
-	@FXML private TextField vname;
-	@FXML private TextField email;
-	@FXML private TextField password;
-	@FXML private TextField username_Login;
-	@FXML private TextField password_Login;
+	@FXML TextField nname;
+	@FXML TextField vname;
+	@FXML TextField email;
+	@FXML PasswordField passwort;
+	@FXML TextField username_Login;
+	@FXML PasswordField passwort_Login;
 
 	public ClientGUI cg;
 	public TRS_Client client;
@@ -67,9 +67,10 @@ public class ClientGUIController {
 
 	@FXML
 	public void handleLogin(ActionEvent event) throws InterruptedException {
-		client.login("testuser","1234");
-		// System.out.println(lUsernameTF.getText());
-		if (client.isAutheticated()) {
+		//client.login("testuser","1234");
+
+		System.out.print(username_Login.getText());
+		/*if (client.isAutheticated()) {
 			try {
 				Node node = (Node) event.getSource();
 				Stage stage = (Stage) node.getScene().getWindow();
@@ -80,7 +81,7 @@ public class ClientGUIController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 	}
 
 	@FXML
