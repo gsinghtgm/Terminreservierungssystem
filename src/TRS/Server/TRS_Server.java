@@ -104,6 +104,7 @@ public class TRS_Server {
 				try {
 					cm = sInput.readLine();
 					if (loginUser("gsingh@student.tgm.ac.at", "gsingh123")) {
+						System.out.println("erfolgreich eingeloggt client 1");
 						sOutput.write("erfolgreich");
 						sOutput.flush();
 					}
