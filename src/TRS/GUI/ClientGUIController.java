@@ -15,12 +15,18 @@ import java.util.concurrent.TimeUnit;
 import TRS.Client.TRS_Client;
 
 public class ClientGUIController {
-	@FXML TextField nname;
-	@FXML TextField vname;
-	@FXML TextField email;
-	@FXML PasswordField passwort;
-	@FXML TextField username_Login;
-	@FXML PasswordField passwort_Login;
+	@FXML
+	TextField nname;
+	@FXML
+	TextField vname;
+	@FXML
+	TextField email;
+	@FXML
+	PasswordField passwort;
+	@FXML
+	TextField username_Login;
+	@FXML
+	PasswordField passwort_Login;
 
 	public ClientGUI cg;
 	public TRS_Client client;
@@ -68,11 +74,8 @@ public class ClientGUIController {
 
 	@FXML
 	public void handleLogin(ActionEvent event) throws InterruptedException {
-		System.out.print(username_Login.getText());
-		/*if (client.isAutheticated()) {
-		client.login("testuser","1234");
-		System.out.println(username_Login.getText());
-		if (client.isAutheticated()) {
+		client.login(username_Login.getText(), passwort_Login.getText());
+		if (client.isAuthenticated()) {
 			try {
 				Node node = (Node) event.getSource();
 				Stage stage = (Stage) node.getScene().getWindow();
@@ -82,8 +85,9 @@ public class ClientGUIController {
 				stage.show();
 			} catch (IOException e) {
 				e.printStackTrace();
+
 			}
-		}*/
+		}
 	}
 
 	@FXML

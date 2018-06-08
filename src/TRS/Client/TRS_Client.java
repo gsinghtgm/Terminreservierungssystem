@@ -16,7 +16,7 @@ public class TRS_Client {
 	private TRS.GUI.ClientGUI cg; // gui
 	private String host; // server ip
 	private int port; // server port
-	boolean autheticated = false;
+	boolean authenticated = false;
 
 	/**
 	 * Konstruktor
@@ -99,14 +99,10 @@ public class TRS_Client {
 		public void run() {
 			try {
 				String msg = sInput.readLine();
-				while (msg != null) {
-					System.out.println("ich mach lesung");
-					msg = sInput.readLine();
-					System.out.println(msg);
+				while (true) {
 					if (msg.equals("erfolgreich"))
-						setAutheticated(true);
+						setAuthenticated(true);
 				}
-				System.out.println("schleife ende");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -116,11 +112,11 @@ public class TRS_Client {
 
 	}
 
-	public boolean isAutheticated() {
-		return autheticated;
+	public boolean isAuthenticated() {
+		return authenticated;
 	}
 
-	public void setAutheticated(boolean autheticated) {
-		this.autheticated = autheticated;
+	public void setAuthenticated(boolean autheticated) {
+		this.authenticated = autheticated;
 	}
 }
