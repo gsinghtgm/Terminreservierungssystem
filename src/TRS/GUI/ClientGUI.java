@@ -36,10 +36,10 @@ public class ClientGUI extends Application {
 			primaryStage.setMinHeight(400.00);
 			primaryStage.setMinWidth(400.00);
 			ClientGUIController clientGUIController = loader.getController();
-			TRS_Client client = new TRS_Client(host, port);
-			client.start();
-			clientGUIController.setMain(this,client);
-			//clientGUIController.setMain(this);
+			//TRS_Client client = new TRS_Client(host, port);
+			//client.start();
+			//clientGUIController.setMain(this,client);
+			clientGUIController.setMain(this);
 			Scene scene = new Scene(pane);
 			primaryStage.setScene(scene);
 			primaryStage.show();
