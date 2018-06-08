@@ -1,11 +1,11 @@
-package TRS;
+package trs;
 
 import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import TRS.Entity.*;
+import trs.Entity.*;
 
 /**
  * Erstellt einen User in der DB mittels einer Hibernate Session

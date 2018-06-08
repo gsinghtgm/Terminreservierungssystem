@@ -1,4 +1,4 @@
-package TRS.Entity;
+package trs.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

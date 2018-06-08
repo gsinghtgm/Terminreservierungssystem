@@ -1,4 +1,4 @@
-package TRS.Server;
+package trs.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 import org.hibernate.Session;
 
-import TRS.*;
+import trs.*;
 
 public class TRS_Server {
 	private static int connectionid;// id fuer jeweiligen verbundenen client
@@ -22,7 +22,7 @@ public class TRS_Server {
 	private boolean keepGoing;
 	private ArrayList<ClientThread> al; // Collection fuer Clients
 	public Map<String, Integer> usermap;
-	private TRS.FactoryBuilder fb = new TRS.FactoryBuilder();
+	private trs.FactoryBuilder fb = new trs.FactoryBuilder();
 	private Session session = fb.session;
 
 	public TRS_Server(int port, Map<String, Integer> usermap) {
@@ -32,11 +32,11 @@ public class TRS_Server {
 	}
 
 	public boolean loginUser(String email, String password) {
-		return new TRS.LoginUser().loginUser(email, password, this.session);
+		return new trs.LoginUser().loginUser(email, password, this.session);
 	}
 
 	public boolean createUser(String firstname, String lastname, String email, String password) {
-		return new TRS.CreateUser().createUser(firstname, lastname, email, password, this.session);
+		return new trs.CreateUser().createUser(firstname, lastname, email, password, this.session);
 	}
 
 	public void close() {
@@ -72,7 +72,7 @@ public class TRS_Server {
 
 	}
 	/*
-	 * public static void main(String args[]) { TRS_Server srv = new TRS_Server();
+	 * public static void main(String args[]) { trs_Server srv = new trs_Server();
 	 * if (srv.loginUser("gsingh@student.tgm.ac.at", "gsingh123"))
 	 * System.out.println("GG"); srv.close(); }
 	 */

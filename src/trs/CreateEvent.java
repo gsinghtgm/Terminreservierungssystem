@@ -1,10 +1,10 @@
-package TRS;
+package trs;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import TRS.Entity.Event;
-import TRS.Entity.User;
+import trs.Entity.Event;
+import trs.Entity.User;
 
 /**
  * Erstellt ein Event in der DB mittels einer Hibernate Session

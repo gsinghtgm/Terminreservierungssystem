@@ -1,4 +1,4 @@
-package TRS;
+package trs;
 
 import javax.persistence.Query;
 

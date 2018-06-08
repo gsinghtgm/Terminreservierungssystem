@@ -1,11 +1,8 @@
-package TRS.Client;
+package trs.Client;
 
 import java.net.*;
 
 import java.io.*;
-
-import java.util.*;
-
 import javax.json.Json;
 import javax.json.JsonObject;
 
@@ -13,7 +10,6 @@ public class TRS_Client {
 	private OutputStreamWriter sOutput; // lesen vom socket
 	private BufferedReader sInput; // schreiben auf socket
 	private Socket socket;
-	private TRS.GUI.ClientGUI cg; // gui
 	private String host; // server ip
 	private int port; // server port
 	boolean authenticated = false;

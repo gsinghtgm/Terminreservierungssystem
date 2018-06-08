@@ -1,4 +1,4 @@
-package TRS.Entity;
+package trs.Entity;
 
 import java.util.List;
 

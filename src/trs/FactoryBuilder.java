@@ -1,10 +1,10 @@
-package TRS;
+package trs;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import TRS.Entity.*;
+import trs.Entity.*;
 
 public class FactoryBuilder {
 	// create session factory

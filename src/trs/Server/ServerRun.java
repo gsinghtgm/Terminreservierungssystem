@@ -1,4 +1,4 @@
-package TRS.Server;
+package trs.Server;
 
 import java.util.Map;
 

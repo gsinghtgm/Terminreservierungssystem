@@ -1,4 +1,4 @@
-package TRS.GUI;
+package trs.GUI;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
@@ -12,7 +12,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import TRS.Client.TRS_Client;
+import trs.Client.TRS_Client;
 
 public class ClientGUIController {
 	@FXML
